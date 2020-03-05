@@ -4,7 +4,7 @@ datastore:
 scheduler:
   period_sec: 5
 eventstore:
-  url: http://localhost:8090
+  url: http://docker-difel110185.eastus2.cloudapp.azure.com:8090
 kafka:
   domain: "docker-difel110185.eastus2.cloudapp.azure.com"
   port: "9092"
