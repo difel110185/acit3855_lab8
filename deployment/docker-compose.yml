@@ -44,6 +44,43 @@ services:
     volumes:
       - my-db:/var/lib/mysql
       # Names our volum
+  acit3855_service1:
+    image: acit3855_service1
+    restart: always
+    ports: 
+      - 8080:8080
+    expose:
+      - 8080
+    depends_on:
+      - "kafka"
+  acit3855_service2:
+    image: acit3855_service2
+    restart: always
+    ports: 
+      - 8090:8090
+    expose:
+      - 8090
+    depends_on:
+      - "acit3855_service1"
+      - "db"
+  acit3855_service3:
+    image: acit3855_service3
+    restart: always
+    ports: 
+      - 8100:8100
+    expose:
+      - 8100
+    depends_on:
+      - "acit3855_service2"
+  acit3855_service4:
+    image: acit3855_service4
+    restart: always
+    ports: 
+      - 8110:8110
+    expose:
+      - 8110
+    depends_on:
+      - "acit3855_service3"
 volumes:
   my-db: 
 
