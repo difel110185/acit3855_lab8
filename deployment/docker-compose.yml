@@ -53,6 +53,8 @@ services:
       - 8080
     depends_on:
       - "kafka"
+    volumes:
+      - ../config:/config
   acit3855_service2:
     image: acit3855_service2
     restart: always
@@ -63,6 +65,8 @@ services:
     depends_on:
       - "acit3855_service1"
       - "db"
+    volumes:
+      - ../config:/config
   acit3855_service3:
     image: acit3855_service3
     restart: always
@@ -72,6 +76,8 @@ services:
       - 8100
     depends_on:
       - "acit3855_service2"
+    volumes:
+      - ../config:/config
   acit3855_service4:
     image: acit3855_service4
     restart: always
@@ -81,6 +87,8 @@ services:
       - 8110
     depends_on:
       - "acit3855_service3"
+    volumes:
+      - ../config:/config
 volumes:
   my-db: 
 
