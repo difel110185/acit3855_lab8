@@ -2,4 +2,4 @@ version: 1
 kafka:
   domain: "docker-difel110185.eastus2.cloudapp.azure.com"
   port: "9092"
-  topic: "events"
+  topic: "events_broken"
